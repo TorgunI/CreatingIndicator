@@ -8,9 +8,8 @@ public class Healing : MonoBehaviour
 
     private float _healValue = 10;
 
-    public void Heal()
+    private void Heal()
     {
-        if (_player.Health != 100)
-            _player.Heal(_healValue);
+        _player.Heal(_healValue);
     }
 }

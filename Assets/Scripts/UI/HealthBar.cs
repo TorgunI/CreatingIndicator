@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
@@ -21,9 +23,27 @@ public class HealthBar : MonoBehaviour
         _slider.value = _player.Health;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if(_slider.value != _player.Health)
+        _player.HealthChanged += OnHealthChanged;
+    }
+
+    private void OnDisable()
+    {
+        _player.HealthChanged -= OnHealthChanged;
+    }
+
+    private void OnHealthChanged()
+    {
+        StartCoroutine(ChangeSliderValue());
+    }
+
+    private IEnumerator ChangeSliderValue()
+    {
+        while (_slider.value != _player.Health)
+        {
             _slider.value = Mathf.MoveTowards(_slider.value, _player.Health, deltaValue * Time.deltaTime);
+            yield return null;
+        }
     }
 }

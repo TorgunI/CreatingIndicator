@@ -8,9 +8,8 @@ public class Hit : MonoBehaviour
 
     private float _damageValue = 10;
 
-    public void Attack()
+    private void Attack()
     {
-        if (_player.Health != 0)
-            _player.Damage(_damageValue);
+        _player.Damage(_damageValue);
     }
 }
