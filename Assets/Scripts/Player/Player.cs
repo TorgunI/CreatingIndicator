@@ -6,25 +6,18 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private UnityAction _healthChanged;
-
-    private const float MinHealth = 0;
-    private const float MaxHealth = 100;
+    public UnityAction HealthChanged;
 
     public float Health { get; private set; } = 50;
-
-    public event UnityAction HealthChanged
-    {
-        add => _healthChanged += value;
-        remove => _healthChanged -= value;
-    }
+    public float MinHealth { get; private set; } = 0;
+    public float MaxHealth { get; private set; } = 100;
 
     public void Heal(float healValue)
     {
         if (IsUpperLimitHealth() == false)
         {
             Health += healValue;
-            _healthChanged?.Invoke();
+            HealthChanged?.Invoke();
         }
     }
 
@@ -33,7 +26,7 @@ public class Player : MonoBehaviour
         if (IsLowerLimitHealth() == false)
         {
             Health -= damageValue;
-            _healthChanged?.Invoke();
+            HealthChanged?.Invoke();
         }
     }
 

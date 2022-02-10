@@ -18,8 +18,8 @@ public class HealthBar : MonoBehaviour
     private void Awake()
     {
         _slider = GetComponent<Slider>();
-        _slider.minValue = 0;
-        _slider.maxValue = 100;
+        _slider.minValue = _player.MinHealth;
+        _slider.maxValue = _player.MaxHealth;
         _slider.value = _player.Health;
     }
 
