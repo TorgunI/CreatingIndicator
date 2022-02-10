@@ -1,27 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _health = 50;
+    [SerializeField] public float Health { get; private set; } = 50;
 
-    //[SerializeField] private PlayerHealthSlider _healthSlider;
-
-    public float GetHealth()
+    public void Heal(float healValue)
     {
-        return _health;
+        Health += healValue;
     }
 
-    public void AddHealth(float healValue)
+    public void Damage(float damageValue)
     {
-        _health += healValue;
-        //_healthSlider.ChangeSliderValue(healValue);
-    }
-
-    public void RemoveHealth(float healValue)
-    {
-        _health -= healValue;
-        //_healthSlider.ChangeSliderValue(healValue);
+        Health -= damageValue;
     }
 }

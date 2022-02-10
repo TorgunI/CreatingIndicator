@@ -719,7 +719,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 2118975149}
-  _healthSlider: {fileID: 408300642}
 --- !u!1 &1252939311
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +906,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 2118975149}
-  _healthSlider: {fileID: 408300642}
 --- !u!114 &1389292669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1579,7 +1577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1089bc3ac280a4eb9282de242dd2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 50
 --- !u!61 &2118975150
 BoxCollider2D:
   m_ObjectHideFlags: 0
