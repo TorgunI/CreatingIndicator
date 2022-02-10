@@ -8,10 +8,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private UnityAction _healthChanged;
 
-    public float Health { get; private set; } = 50;
-
     private const float MinHealth = 0;
     private const float MaxHealth = 100;
+
+    public float Health { get; private set; } = 50;
 
     public event UnityAction HealthChanged
     {
